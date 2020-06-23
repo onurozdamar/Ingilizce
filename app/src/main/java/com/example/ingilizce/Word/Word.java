@@ -62,7 +62,7 @@ public class Word implements Serializable {
         this.sentenceTr = sentenceTr;
     }
 
-    public String getWordDate() {
+    String getWordDate() {
         return wordDate;
     }
 

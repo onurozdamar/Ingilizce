@@ -7,13 +7,22 @@
     tools:context=".Quiz.ShowQuizInfos">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/correct_answer_txt_sqi"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="139dp"
         android:layout_marginLeft="139dp"
         android:layout_marginTop="117dp"
-        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/wrong_answer_txt_sqi"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="139dp"
+        android:layout_marginLeft="139dp"
+        android:layout_marginTop="217dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

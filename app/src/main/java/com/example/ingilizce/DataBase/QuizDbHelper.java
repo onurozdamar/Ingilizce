@@ -1,17 +1,14 @@
 package com.example.ingilizce.DataBase;
 
-import android.content.ContentValues;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
 import com.example.ingilizce.Quiz.QuizResult;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public class QuizDbHelper extends SQLiteOpenHelper {
 
@@ -43,7 +40,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + Contracts.Quizzes.TABLE_NAME);
         onCreate(db);
     }
-
+/*
     public void insertQuiz(QuizResult quizResult) {
         ContentValues cv = new ContentValues();
         cv.put(Contracts.Quizzes.COLUMN_CORRECT, quizResult.getCorrectCount());
@@ -52,7 +49,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db = getWritableDatabase();
         db.insert(Contracts.Quizzes.TABLE_NAME, null, cv);
         db.close();
-    }
+    }*/
 
     public ArrayList<QuizResult> getQuizArrayList() {
         db = getReadableDatabase();
@@ -94,12 +91,12 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         return quizArrayList;
     }
-
+/*
     private String getNow() {
         Date date = new Date();
 
         SimpleDateFormat simpleDateFormat = (SimpleDateFormat) SimpleDateFormat.getDateInstance();
         simpleDateFormat.applyLocalizedPattern(" d MMM yyyy HH:mm:ss");
         return simpleDateFormat.format(date);
-    }
+    }*/
 }

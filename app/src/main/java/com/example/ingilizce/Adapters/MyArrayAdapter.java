@@ -26,19 +26,27 @@ public class MyArrayAdapter extends ArrayAdapter<Word> {
         this.recource = resource;
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        // layout inflator'ı context'ten alıyoruz
-        //Aldığımız inflater ile oluşturduğumuz custom layoutu alıyoruz
-        //Custom layouta koyduğumuz text view'a listedeki kelimeyi yazdırıyoruz
+    public View getView(int position,  View convertView,  ViewGroup parent) {
 
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-        convertView = layoutInflater.inflate(recource, parent, false);
+        ViewHolder viewHolder = null;
 
-        TextView textView = convertView.findViewById(R.id.custLayTextView);
+        if (convertView == null) {
 
-        textView.setText(getItem(position).getWordEn());
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            if (inflater != null) {
+                convertView = inflater.inflate(recource, parent, false);
+                viewHolder = new ViewHolder(convertView);
+                convertView.setTag(viewHolder);
+            }
+
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+
+        if (viewHolder != null) {
+            viewHolder.setTexts(getItem(position));
+        }
 
         return convertView;
     }
@@ -46,5 +54,20 @@ public class MyArrayAdapter extends ArrayAdapter<Word> {
     @Override
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
+    }
+
+    class ViewHolder {
+
+        private TextView textView;
+
+
+        ViewHolder(View view) {
+            textView = view.findViewById(R.id.custLayTextView);
+        }
+
+        void setTexts(Word word) {
+            textView.setText(String.valueOf(word.getWordEn()));
+        }
+
     }
 }

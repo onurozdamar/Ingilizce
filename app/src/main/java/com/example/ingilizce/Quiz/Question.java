@@ -1,11 +1,11 @@
 package com.example.ingilizce.Quiz;
 
-public class Question {
+class Question {
     private String question;
     private String[] options = new String[4];
     private String answer;
 
-    public Question(String question, String optionOne, String optionTwo, String optionThree, String optionFour, String answer) {
+    Question(String question, String optionOne, String optionTwo, String optionThree, String optionFour, String answer) {
         this.question = question;
         this.options[0] = optionOne;
         this.options[1] = optionTwo;
@@ -14,28 +14,28 @@ public class Question {
         this.answer = answer;
     }
 
-    public String getQuestion() {
+    String getQuestion() {
         return question;
     }
 
-    public String getOptionOne() {
+    String getOptionOne() {
         return options[0];
     }
 
-    public String getOptionTwo() {
+    String getOptionTwo() {
         return options[1];
     }
 
-    public String getOptionThree() {
+    String getOptionThree() {
         return options[2];
     }
 
-    public String getOptionFour() {
+    String getOptionFour() {
         return options[3];
     }
 
 
-    public String getAnswer() {
+    String getAnswer() {
         return answer;
     }
 }

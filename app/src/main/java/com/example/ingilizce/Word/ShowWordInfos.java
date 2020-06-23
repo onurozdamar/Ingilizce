@@ -41,18 +41,20 @@ public class ShowWordInfos extends AppCompatActivity {
         dateText = findViewById(R.id.wordDate);
 
         Intent intent = getIntent();
-        incomingWord = (Word) intent.getSerializableExtra("word");
+        if (intent != null) {
+            incomingWord = (Word) intent.getSerializableExtra("word");
+            if (incomingWord != null) {
+                wordEnText.setText(incomingWord.getWordEn());
+                wordTrText.setText(incomingWord.getWordTr());
+                sentenceEnText.setText(incomingWord.getSentenceEn());
+                sentenceTrText.setText(incomingWord.getSentenceTr());
+                dateText.setText(incomingWord.getWordDate());
 
-        wordEnText.setText(incomingWord.getWordEn());
-        wordTrText.setText(incomingWord.getWordTr());
-        sentenceEnText.setText(incomingWord.getSentenceEn());
-        sentenceTrText.setText(incomingWord.getSentenceTr());
-        dateText.setText(incomingWord.getWordDate());
-
-        byte[] bytes = incomingWord.getBytes();
-
-        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-        imageView.setImageBitmap(bitmap);
+                byte[] bytes = incomingWord.getBytes();
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                imageView.setImageBitmap(bitmap);
+            }
+        }
 
     }
 

@@ -10,7 +10,7 @@ import java.util.Collections;
 
 public class Quiz {
     private static final int maxQuestion = 20;
-    private Question[] questions = new Question[maxQuestion];
+    private Question[] questions;
     private int count = -1;
     private WordsDbHelper wordsDbHelper;
 
@@ -19,6 +19,7 @@ public class Quiz {
     public Quiz(Context context) {
         wordsDbHelper = new WordsDbHelper(context);
         quizResult = new QuizResult();
+        questions = new Question[maxQuestion];
     }
 
     private void getQuestions() {

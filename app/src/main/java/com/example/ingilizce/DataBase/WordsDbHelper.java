@@ -180,6 +180,7 @@ public class WordsDbHelper extends SQLiteOpenHelper {
         db = getReadableDatabase();
 
         SQLiteStatement s = db.compileStatement("SELECT COUNT(*) FROM words;");
+        db.close();
         return (int) s.simpleQueryForLong();
     }
 

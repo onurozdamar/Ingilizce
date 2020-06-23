@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -49,8 +50,8 @@ public class MakeQuiz extends AppCompatActivity {
         correctCountTextView = findViewById(R.id.countCorrectTextView);
 
         if (!quiz.isCanCreateQuiz()) {
-            setVisiableButtons(View.INVISIBLE);
-            questionTextView.setText("Sınav  için yeterli kelimeniz  yoktur");
+            setInvisiableButtons();
+            questionTextView.setText(R.string.yetersiz_kelime);
         } else {
             quiz.startQuiz();
             nextQuestion();
@@ -79,6 +80,7 @@ public class MakeQuiz extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void nextQuestion() {
         if (quiz.goNextQuestion()) {
@@ -91,7 +93,7 @@ public class MakeQuiz extends AppCompatActivity {
             correctCountTextView.setText(quiz.getCorrectCount() + "");
             setOptionText();
         } else {
-            setVisiableButtons(View.INVISIBLE);
+            setInvisiableButtons();
             questionTextView.setText("quiz end correct: " + quiz.getCorrectCount() + " wrong: " + quiz.getWrongCount());
             countTextView.setText("");
             wrongCountTextView.setText("");
@@ -126,11 +128,11 @@ public class MakeQuiz extends AppCompatActivity {
         optionFour.setClickable(enable);
     }
 
-    private void setVisiableButtons(int visiable) {
-        optionOne.setVisibility(visiable);
-        optionTwo.setVisibility(visiable);
-        optionThree.setVisibility(visiable);
-        optionFour.setVisibility(visiable);
+    private void setInvisiableButtons() {
+        optionOne.setVisibility(View.INVISIBLE);
+        optionTwo.setVisibility(View.INVISIBLE);
+        optionThree.setVisibility(View.INVISIBLE);
+        optionFour.setVisibility(View.INVISIBLE);
     }
 
     private void setOptionText() {

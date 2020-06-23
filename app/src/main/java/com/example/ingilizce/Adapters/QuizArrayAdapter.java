@@ -7,9 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.example.ingilizce.Quiz.QuizResult;
 import com.example.ingilizce.R;
 
@@ -26,17 +23,44 @@ public class QuizArrayAdapter extends ArrayAdapter<QuizResult> {
         this.recource = resource;
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
 
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-        convertView = layoutInflater.inflate(recource, parent, false);
+        ViewHolder viewHolder = null;
 
-        TextView textView = convertView.findViewById(R.id.custLayQuizTextView);
+        if (convertView == null) {
 
-        textView.setText(getItem(position).getId() + 1 + ". Sınav");
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            if (inflater != null) {
+                convertView = inflater.inflate(recource, parent, false);
+                viewHolder = new ViewHolder(convertView);
+                convertView.setTag(viewHolder);
+            }
+
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+
+        if (viewHolder != null) {
+            viewHolder.setTexts(getItem(position));
+        }
 
         return convertView;
+    }
+
+    class ViewHolder {
+
+        private TextView textView;
+
+        ViewHolder(View view) {
+            textView = view.findViewById(R.id.custLayQuizTextView);
+        }
+
+        void setTexts(QuizResult quizResult) {
+            if (quizResult != null) {
+                textView.setText((quizResult.getId() + 1 + ". Sınav"));
+            }
+        }
+
     }
 }
