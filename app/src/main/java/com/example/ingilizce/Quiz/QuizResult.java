@@ -12,6 +12,11 @@ public class QuizResult implements Serializable {
     public QuizResult() {
     }
 
+    public QuizResult(int correctCount, int wrongCount) {
+        this.correctCount = correctCount;
+        this.wrongCount = wrongCount;
+    }
+
     public int getId() {
         return id;
     }
@@ -20,7 +25,7 @@ public class QuizResult implements Serializable {
         this.id = id;
     }
 
-     int getCorrectCount() {
+    public int getCorrectCount() {
         return correctCount;
     }
 
@@ -28,7 +33,7 @@ public class QuizResult implements Serializable {
         this.correctCount = correctCount;
     }
 
-     int getWrongCount() {
+    public int getWrongCount() {
         return wrongCount;
     }
 
@@ -44,11 +49,11 @@ public class QuizResult implements Serializable {
         this.date = date;
     }
 
-     void increaseCorrectCount() {
+    void increaseCorrectCount() {
         correctCount++;
     }
 
-     void increaseWrongCount() {
+    void increaseWrongCount() {
         wrongCount++;
     }
 

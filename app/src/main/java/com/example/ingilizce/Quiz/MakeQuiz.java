@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,6 +14,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.ingilizce.DataBase.QuizDbHelper;
+import com.example.ingilizce.Fragments.SinavlarFragment;
 import com.example.ingilizce.R;
 
 public class MakeQuiz extends AppCompatActivity {
@@ -98,6 +101,11 @@ public class MakeQuiz extends AppCompatActivity {
             countTextView.setText("");
             wrongCountTextView.setText("");
             correctCountTextView.setText("");
+
+            QuizResult quizResult = new QuizResult(quiz.getCorrectCount(), quiz.getWrongCount());
+
+            QuizDbHelper quizDbHelper = new QuizDbHelper(this);
+            quizDbHelper.insertQuiz(quizResult);
         }
 
     }
