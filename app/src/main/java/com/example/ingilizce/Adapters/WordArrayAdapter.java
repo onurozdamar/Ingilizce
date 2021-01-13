@@ -15,12 +15,12 @@ import com.example.ingilizce.Word.Word;
 
 import java.util.ArrayList;
 
-public class MyArrayAdapter extends ArrayAdapter<Word> {
+public class WordArrayAdapter extends ArrayAdapter<Word> {
 
     private Context context;
     private int recource;
 
-    public MyArrayAdapter(Context context, int resource, ArrayList<Word> words) {
+    public WordArrayAdapter(Context context, int resource, ArrayList<Word> words) {
         super(context, resource, words);
         this.context = context;
         this.recource = resource;

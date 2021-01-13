@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.ingilizce.Adapters.MyArrayAdapter;
+import com.example.ingilizce.Adapters.WordArrayAdapter;
 import com.example.ingilizce.DataBase.WordsDbHelper;
 import com.example.ingilizce.R;
 import com.example.ingilizce.Word.AddWord;
@@ -38,7 +38,7 @@ public class WordsFragment extends Fragment {
     }
 
     private ArrayList<Word> wordArrayList;
-    private MyArrayAdapter customAdapter;
+    private WordArrayAdapter customAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,7 +50,7 @@ public class WordsFragment extends Fragment {
         wordArrayList = new ArrayList<>();
         getData();
 
-        customAdapter = new MyArrayAdapter(getContext(), R.layout.custom_layout, wordArrayList);
+        customAdapter = new WordArrayAdapter(getContext(), R.layout.custom_layout, wordArrayList);
         listView.setAdapter(customAdapter);
 
 
