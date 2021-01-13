@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.QuizzesFragment">
 
-
     <ListView
         android:id="@+id/quizList"
         android:layout_width="match_parent"

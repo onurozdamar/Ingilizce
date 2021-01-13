@@ -9,7 +9,6 @@
     tools:context=".Word.ShowWordInfos">
 
 
-
     <ImageView
         android:id="@+id/wordImage"
         android:layout_width="match_parent"
@@ -78,6 +77,7 @@
 
         </TextView>
     </LinearLayout>
+
     <TextView
         android:id="@+id/wordDate"
         android:layout_width="match_parent"

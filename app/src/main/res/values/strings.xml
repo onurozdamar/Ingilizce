@@ -11,4 +11,19 @@
     <string name="quizEndText">Quiz end correct: %1$d wrong: %2$d</string>
     <string name="nCorrect">%1$d Correct</string>
     <string name="nWrong">%1$d Wrong</string>
+    <string name="select_image">Select Image</string>
+    <string name="hint_word_tr">Word TR</string>
+    <string name="save">Save</string>
+    <string name="hint_word_en">Word EN</string>
+    <string name="hint_sentence_tr">Sentence TR</string>
+    <string name="hint_sentence_en">Sentence EN</string>
+    <string name="question_">Question:</string>
+    <string name="xx">xx</string>
+    <string name="correct_">Correct:</string>
+    <string name="wrong_">Wrong:</string>
+    <string name="question">Question</string>
+    <string name="press_for_a">Press for the A</string>
+    <string name="press_for_b">Press for the B</string>
+    <string name="press_for_c">Press for the C</string>
+    <string name="press_for_d">Press for the D</string>
 </resources>

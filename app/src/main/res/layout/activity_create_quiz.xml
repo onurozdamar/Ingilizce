@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="2dp"
-            android:text="Soru:"
+            android:text="@string/question_"
             android:textColor="#000" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="2dp"
-            android:text="xx"
+            android:text="@string/xx"
             android:textColor="#000" />
 
         <TextView
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:padding="2dp"
-            android:text="Doğru:"
+            android:text="@string/correct_"
             android:textColor="#000" />
 
         <TextView
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="2dp"
-            android:text="xx"
+            android:text="@string/xx"
             android:textColor="#000" />
 
         <TextView
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:padding="2dp"
-            android:text="Yanlış:"
+            android:text="@string/wrong_"
             android:textColor="#000" />
 
         <TextView
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="2dp"
-            android:text="xx"
+            android:text="@string/xx"
             android:textColor="#000" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
         android:gravity="center"
-        android:text="Soru"
+        android:text="@string/question"
         android:textColor="#000"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +110,7 @@
             android:gravity="center"
             android:onClick="onClickButton"
             android:padding="12sp"
-            android:text="A secenegi secmek icin tikla"
+            android:text="@string/press_for_a"
             android:textColor="#000" />
 
         <RadioButton
@@ -123,7 +123,7 @@
             android:gravity="center"
             android:onClick="onClickButton"
             android:padding="12sp"
-            android:text="B secenegi secmek icin tikla"
+            android:text="@string/press_for_b"
             android:textColor="#000" />
 
         <RadioButton
@@ -136,7 +136,7 @@
             android:gravity="center"
             android:onClick="onClickButton"
             android:padding="12sp"
-            android:text="C secenegi secmek icin tikla"
+            android:text="@string/press_for_c"
             android:textColor="#000" />
 
 
@@ -150,9 +150,9 @@
             android:gravity="center"
             android:onClick="onClickButton"
             android:padding="12sp"
-            android:text="D secenegi secmek icin tikla"
+            android:text="@string/press_for_d"
             android:textColor="#000" />
-        >
+
     </RadioGroup>
 
 

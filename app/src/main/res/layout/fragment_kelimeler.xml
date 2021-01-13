@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context=".Fragments.WordsFragment">
 
-
     <ListView
         android:id="@+id/wordsListView"
         android:layout_width="match_parent"
