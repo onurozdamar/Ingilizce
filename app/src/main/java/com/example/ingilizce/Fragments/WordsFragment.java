@@ -32,11 +32,9 @@ import java.util.Objects;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class KelimelerFragment extends Fragment {
+public class WordsFragment extends Fragment {
 
-
-    public KelimelerFragment() {
-        // Required empty public constructor
+    public WordsFragment() {
     }
 
     private ArrayList<Word> wordArrayList;
@@ -96,7 +94,7 @@ public class KelimelerFragment extends Fragment {
             startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.delete_item) {
-            WordsDbHelper wordsDbHelper  = new WordsDbHelper(getContext());
+            WordsDbHelper wordsDbHelper = new WordsDbHelper(getContext());
             wordsDbHelper.deleteWord(wordArrayList.get(position));
 
             wordArrayList.remove(position);

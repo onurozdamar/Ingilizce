@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.AnasayfaFragment">
-
+    tools:context=".Fragments.MainFragment">
 
     <Button
         android:id="@+id/ceateQuizButton"
@@ -15,7 +14,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="273dp"
-        android:text="Sınav Ol"
+        android:text="@string/sinav_ol"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
@@ -31,7 +30,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="410dp"
         android:layout_marginBottom="273dp"
-        android:text="Kelime Ekle"
+        android:text="@string/kelime_ekle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

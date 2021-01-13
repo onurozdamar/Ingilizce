@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.ingilizce.Fragments.AnasayfaFragment;
-import com.example.ingilizce.Fragments.KelimelerFragment;
-import com.example.ingilizce.Fragments.SinavlarFragment;
+import com.example.ingilizce.Fragments.MainFragment;
+import com.example.ingilizce.Fragments.WordsFragment;
+import com.example.ingilizce.Fragments.QuizzesFragment;
 
 public class OrdersPagerAdapter extends FragmentStateAdapter {
 
@@ -20,11 +20,11 @@ public class OrdersPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new AnasayfaFragment();
+                return new MainFragment();
             case 1:
-                return new KelimelerFragment();
+                return new WordsFragment();
             default:
-                return new SinavlarFragment();
+                return new QuizzesFragment();
         }
     }
 

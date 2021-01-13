@@ -24,11 +24,9 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SinavlarFragment extends Fragment {
+public class QuizzesFragment extends Fragment {
 
-
-    public SinavlarFragment() {
-        // Required empty public constructor
+    public QuizzesFragment() {
     }
 
     private ArrayList<QuizResult> quizArrayList;

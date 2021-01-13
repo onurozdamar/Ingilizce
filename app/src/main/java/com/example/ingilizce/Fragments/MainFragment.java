@@ -19,13 +19,10 @@ import com.example.ingilizce.Word.AddWord;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AnasayfaFragment extends Fragment {
+public class MainFragment extends Fragment {
 
-
-    public AnasayfaFragment() {
-        // Required empty public constructor
+    public MainFragment() {
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
