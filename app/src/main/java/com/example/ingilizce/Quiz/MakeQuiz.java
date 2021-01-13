@@ -4,7 +4,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -81,21 +80,19 @@ public class MakeQuiz extends AppCompatActivity {
 
     }
 
-    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void nextQuestion() {
         if (quiz.goNextQuestion()) {
             changeBackground();
             setEnableButtons(true);
-            //Log.d("name", "şuanki soru " + quiz.getCount());
             questionTextView.setText(quiz.getNextQuestion());
-            countTextView.setText(quiz.getCount() + 1 + "");
-            wrongCountTextView.setText(quiz.getWrongCount() + "");
-            correctCountTextView.setText(quiz.getCorrectCount() + "");
+            countTextView.setText(String.valueOf(quiz.getCount() + 1));
+            wrongCountTextView.setText(String.valueOf(quiz.getWrongCount()));
+            correctCountTextView.setText(String.valueOf(quiz.getCorrectCount()));
             setOptionText();
         } else {
             setInvisiableButtons();
-            questionTextView.setText("quiz end correct: " + quiz.getCorrectCount() + " wrong: " + quiz.getWrongCount());
+            questionTextView.setText(getString(R.string.quizEndText, quiz.getCorrectCount(), quiz.getWrongCount()));
             countTextView.setText("");
             wrongCountTextView.setText("");
             correctCountTextView.setText("");

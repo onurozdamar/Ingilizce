@@ -60,7 +60,6 @@ public class ShowWordInfos extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         //inflater
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu, menu);
@@ -71,7 +70,6 @@ public class ShowWordInfos extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         if (item.getItemId() == R.id.update_word_item) {
             //update word
             Intent intent = new Intent(this, AddWord.class);
@@ -88,7 +86,6 @@ public class ShowWordInfos extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

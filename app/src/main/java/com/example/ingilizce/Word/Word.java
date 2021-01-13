@@ -11,6 +11,7 @@ public class Word implements Serializable {
     private String wordDate;
     private byte[] bytes;
 
+
     public Word() {
     }
 

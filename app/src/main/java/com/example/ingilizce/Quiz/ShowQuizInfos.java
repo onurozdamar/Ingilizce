@@ -14,7 +14,6 @@ public class ShowQuizInfos extends AppCompatActivity {
     TextView correctAnswerCount;
     TextView wrongAnswerCount;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +28,8 @@ public class ShowQuizInfos extends AppCompatActivity {
             QuizResult quiz = (QuizResult) i.getSerializableExtra("quiz");
 
             if (quiz != null) {
-                correctAnswerCount.setText(quiz.getCorrectCount()+" Doğru");
-                wrongAnswerCount.setText(quiz.getWrongCount()+" Yanlış");
+                correctAnswerCount.setText(getString(R.string.nCorrect, quiz.getCorrectCount()));
+                wrongAnswerCount.setText(getString(R.string.nWrong, quiz.getWrongCount()));
             }
 
         }

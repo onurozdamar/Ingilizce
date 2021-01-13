@@ -34,7 +34,6 @@ class Question {
         return options[3];
     }
 
-
     String getAnswer() {
         return answer;
     }

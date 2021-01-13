@@ -1,10 +1,8 @@
 package com.example.ingilizce.Quiz;
 
 import android.content.Context;
-
 import com.example.ingilizce.DataBase.WordsDbHelper;
 import com.example.ingilizce.Word.Word;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -47,7 +45,6 @@ public class Quiz {
 
             questions[i] = new Question(words.get(i).getWordEn(), options.get(0), options.get(1), options.get(2), options.get(3), words.get(i).getWordTr());
         }
-
     }
 
     void startQuiz() {

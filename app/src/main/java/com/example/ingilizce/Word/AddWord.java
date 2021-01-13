@@ -171,7 +171,6 @@ public class AddWord extends AppCompatActivity {
             height = maxSize;
             width = (int) (height * bitmapRatio);
         }
-
         return Bitmap.createScaledBitmap(image, width, height, true);
     }
 }

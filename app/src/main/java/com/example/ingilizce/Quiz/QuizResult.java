@@ -12,7 +12,7 @@ public class QuizResult implements Serializable {
     public QuizResult() {
     }
 
-    public QuizResult(int correctCount, int wrongCount) {
+    QuizResult(int correctCount, int wrongCount) {
         this.correctCount = correctCount;
         this.wrongCount = wrongCount;
     }

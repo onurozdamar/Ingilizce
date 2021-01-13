@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Ingilizce</string>
 
-    <string name="yetersiz_kelime">Sınav için yeterli kelimeniz  yoktur</string>
-    <string name="sinav_ol">Sınav Ol</string>
-    <string name="kelime_ekle">Kelime Ekle</string>
-    <string name="mainPage">AnaSayfa</string>
-    <string name="words">Kelimeler</string>
-    <string name="quizzes">Sınavlar</string>
-    <string name="nthQuiz">%1$d. Sınav</string>
+    <string name="yetersiz_kelime">Not enough word for quiz</string>
+    <string name="sinav_ol">Take an Exam</string>
+    <string name="kelime_ekle">Add Word</string>
+    <string name="mainPage">MainPage</string>
+    <string name="words">Words</string>
+    <string name="quizzes">Quizzes</string>
+    <string name="nthQuiz">%1$d. Quiz</string>
+    <string name="quizEndText">Quiz end correct: %1$d wrong: %2$d</string>
+    <string name="nCorrect">%1$d Correct</string>
+    <string name="nWrong">%1$d Wrong</string>
 </resources>
