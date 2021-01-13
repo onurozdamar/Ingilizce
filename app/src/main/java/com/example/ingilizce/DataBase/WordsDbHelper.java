@@ -21,7 +21,6 @@ public class WordsDbHelper extends SQLiteOpenHelper {
 
     private SQLiteDatabase db;
 
-
     public WordsDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -51,7 +50,7 @@ public class WordsDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertWord(Word word) {
+    private ContentValues getContentValues(Word word) {
         ContentValues cv = new ContentValues();
         cv.put(Contracts.WordsTable.COLUMN_WORDEN, word.getWordEn());
         cv.put(Contracts.WordsTable.COLUMN_WORDTR, word.getWordTr());
@@ -59,6 +58,11 @@ public class WordsDbHelper extends SQLiteOpenHelper {
         cv.put(Contracts.WordsTable.COLUMN_SENTENCETR, word.getSentenceTr());
         cv.put(Contracts.WordsTable.COLUMN_DATE, getNow());
         cv.put(Contracts.WordsTable.COLUMN_IMAGE, word.getBytes());
+        return cv;
+    }
+
+    public void insertWord(Word word) {
+        ContentValues cv = getContentValues(word);
 
         db = getWritableDatabase();
         db.insert(Contracts.WordsTable.TABLE_NAME, null, cv);
@@ -66,25 +70,19 @@ public class WordsDbHelper extends SQLiteOpenHelper {
     }
 
     public void updateWord(Word word) {
-        ContentValues cv = new ContentValues();
-        cv.put(Contracts.WordsTable.COLUMN_WORDEN, word.getWordEn());
-        cv.put(Contracts.WordsTable.COLUMN_WORDTR, word.getWordTr());
-        cv.put(Contracts.WordsTable.COLUMN_SENTENCEEN, word.getSentenceEn());
-        cv.put(Contracts.WordsTable.COLUMN_SENTENCETR, word.getSentenceTr());
-        cv.put(Contracts.WordsTable.COLUMN_DATE, getNow());
-        cv.put(Contracts.WordsTable.COLUMN_IMAGE, word.getBytes());
+        ContentValues cv = getContentValues(word);
 
         db = getWritableDatabase();
         db.update(Contracts.WordsTable.TABLE_NAME, cv, "id = ?", new String[]{String.valueOf(word.getId())});
         db.close();
     }
 
-    public ArrayList<Word> getWordArrayList() {
+    public ArrayList<Word> getWords() {
 
         db = getReadableDatabase();
         ArrayList<Word> wordArrayList = new ArrayList<>();
 
-        String[] Projection = {
+        String[] columns = {
                 Contracts.WordsTable.COLUMN_ID,
                 Contracts.WordsTable.COLUMN_WORDEN,
                 Contracts.WordsTable.COLUMN_WORDTR,
@@ -95,7 +93,7 @@ public class WordsDbHelper extends SQLiteOpenHelper {
         };
 
         Cursor c = db.query(Contracts.WordsTable.TABLE_NAME,
-                Projection,
+                columns,
                 null,
                 null,
                 null,
@@ -130,53 +128,7 @@ public class WordsDbHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public ArrayList<Word> getWords() {
-        db = getReadableDatabase();
-
-        String[] Projection = {
-                Contracts.WordsTable.COLUMN_WORDEN,
-                Contracts.WordsTable.COLUMN_WORDTR,
-                Contracts.WordsTable.COLUMN_SENTENCEEN,
-                Contracts.WordsTable.COLUMN_SENTENCETR,
-                Contracts.WordsTable.COLUMN_DATE,
-                Contracts.WordsTable.COLUMN_IMAGE
-        };
-
-        ArrayList<Word> returnValue = new ArrayList<>();
-
-        Cursor c = db.query(Contracts.WordsTable.TABLE_NAME,
-                Projection,
-                null,
-                null,
-                null,
-                null,
-                "id DESC",
-                "20");
-
-
-        Word word;
-
-        if (c.moveToFirst()) {
-            do {
-                word = new Word();
-                word.setWordEn(c.getString(c.getColumnIndex(Contracts.WordsTable.COLUMN_WORDEN)));
-                word.setWordTr(c.getString(c.getColumnIndex(Contracts.WordsTable.COLUMN_WORDTR)));
-                word.setSentenceEn(c.getString(c.getColumnIndex(Contracts.WordsTable.COLUMN_SENTENCEEN)));
-                word.setSentenceTr(c.getString(c.getColumnIndex(Contracts.WordsTable.COLUMN_SENTENCETR)));
-                word.setWordDate(c.getString(c.getColumnIndex(Contracts.WordsTable.COLUMN_DATE)));
-                word.setBytes(c.getBlob(c.getColumnIndex(Contracts.WordsTable.COLUMN_IMAGE)));
-
-                returnValue.add(word);
-            } while (c.moveToNext());
-
-        }
-
-        c.close();
-        db.close();
-        return returnValue;
-    }
-
-    public int getCountWord() {
+    public int getWordCount() {
         db = getReadableDatabase();
         SQLiteStatement s = db.compileStatement("SELECT COUNT(*) FROM words;");
         return (int) s.simpleQueryForLong();
@@ -184,7 +136,6 @@ public class WordsDbHelper extends SQLiteOpenHelper {
 
     private String getNow() {
         Date date = new Date();
-
         SimpleDateFormat simpleDateFormat = (SimpleDateFormat) SimpleDateFormat.getDateInstance();
         simpleDateFormat.applyLocalizedPattern(" d MMM yyyy HH:mm:ss");
         return simpleDateFormat.format(date);

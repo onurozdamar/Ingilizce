@@ -63,7 +63,7 @@ public class Quiz {
     }
 
     boolean isCanCreateQuiz() {
-        return wordsDbHelper.getCountWord() >= maxQuestion;
+        return wordsDbHelper.getWordCount() >= maxQuestion;
     }
 
     boolean isAnswerTrue(String str) {

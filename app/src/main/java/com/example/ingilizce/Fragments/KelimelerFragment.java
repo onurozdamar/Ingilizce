@@ -72,7 +72,7 @@ public class KelimelerFragment extends Fragment {
 
     private void getData() {
         WordsDbHelper wordsDbHelper = new WordsDbHelper(getContext());
-        wordArrayList = wordsDbHelper.getWordArrayList();
+        wordArrayList = wordsDbHelper.getWords();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
