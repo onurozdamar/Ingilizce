@@ -29,21 +29,20 @@ public class MainActivity extends AppCompatActivity {
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 switch (position) {
                     case 0: {
-                        tab.setText("Anasayfa");
+                        tab.setText(R.string.mainPage);
                         tab.setIcon(R.drawable.ic_pending);
                         break;
                     }
                     case 1: {
-                        tab.setText("Kelimeler");
+                        tab.setText(R.string.words);
                         tab.setIcon(R.drawable.ic_confirmed);
                         break;
                     }
                     case 2: {
-                        tab.setText("Sınavlar");
+                        tab.setText(R.string.quizzes);
                         tab.setIcon(R.drawable.ic_delivered);
                         break;
                     }
-
                 }
             }
         }
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayoutMediator.attach();
 
         Intent intent = getIntent();
-        int index = intent.getIntExtra("position",0);
+        int index = intent.getIntExtra("position", 0);
         tabLayout.selectTab(tabLayout.getTabAt(index));
 
 

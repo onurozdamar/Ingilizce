@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Ingilizce</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="yetersiz_kelime">Sınav  için yeterli kelimeniz  yoktur</string>
+    <string name="yetersiz_kelime">Sınav için yeterli kelimeniz  yoktur</string>
     <string name="sinav_ol">Sınav Ol</string>
     <string name="kelime_ekle">Kelime Ekle</string>
+    <string name="mainPage">AnaSayfa</string>
+    <string name="words">Kelimeler</string>
+    <string name="quizzes">Sınavlar</string>
 </resources>
