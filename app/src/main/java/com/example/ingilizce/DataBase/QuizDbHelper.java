@@ -13,7 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-
 public class QuizDbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "English";
@@ -59,7 +58,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db = getReadableDatabase();
         ArrayList<QuizResult> quizArrayList = new ArrayList<>();
 
-        String[] Projection = {
+        String[] columns = {
                 Contracts.Quizzes.COLUMN_ID,
                 Contracts.Quizzes.COLUMN_CORRECT,
                 Contracts.Quizzes.COLUMN_WRONG,
@@ -67,7 +66,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         };
 
         Cursor c = db.query(Contracts.Quizzes.TABLE_NAME,
-                Projection,
+                columns,
                 null,
                 null,
                 null,

@@ -14,7 +14,6 @@ public class Contracts {
         public static final String COLUMN_SENTENCETR = "sentenceTr";
         public static final String COLUMN_DATE = "wordDate";
         public static final String COLUMN_IMAGE = "image";
-
     }
 
     public static class Quizzes implements BaseColumns {
@@ -24,6 +23,5 @@ public class Contracts {
         public static final String COLUMN_CORRECT = "correct";
         public static final String COLUMN_WRONG = "wrong";
         public static final String COLUMN_DATE = "quizDate";
-
     }
 }

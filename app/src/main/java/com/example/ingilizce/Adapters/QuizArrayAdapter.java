@@ -58,7 +58,7 @@ public class QuizArrayAdapter extends ArrayAdapter<QuizResult> {
 
         void setTexts(QuizResult quizResult) {
             if (quizResult != null) {
-                textView.setText((quizResult.getId() + 1 + ". Sınav"));
+                textView.setText(context.getString(R.string.nthQuiz, quizResult.getId() + 1));
             }
         }
 

@@ -7,4 +7,5 @@
     <string name="mainPage">AnaSayfa</string>
     <string name="words">Kelimeler</string>
     <string name="quizzes">Sınavlar</string>
+    <string name="nthQuiz">%1$d. Sınav</string>
 </resources>
